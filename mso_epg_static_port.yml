@@ -1,0 +1,23 @@
+---
+- name: Binding EPG "{{ myepg.epg_name }}" with Path "{{ myepg.path }}" type "{{ myepg.interface_type }}"
+  cisco.mso.mso_schema_site_anp_epg_staticport:
+    host: "{{ mso_host }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    login_domain: Local
+    use_proxy: false
+    use_ssl: true
+    validate_certs: false
+    schema: "{{ myepg.schema_name }}"
+    template: "{{ myepg.template_name }}"
+    site: "{{ myepg.site_name }}"
+    epg: "{{ myepg.epg_name }}"
+    anp: "{{ myepg.anp_name }}"
+    type: "{{ myepg.interface_type }}"
+    pod: "{{ myepg.pod_id }}"
+    leaf: "{{ myepg.node }}"
+    mode: "{{ myepg.mode }}"
+    vlan: "{{ myepg.encap }}"
+    path: "{{ myepg.path }}"
+    deployment_immediacy: "{{ myepg.deployment_immediacy}}"
+    state: present
